@@ -106,6 +106,7 @@
 	git
 	bash
   docker
+  tailscale
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
