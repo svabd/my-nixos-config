@@ -108,6 +108,8 @@
 	bash
   docker
   tailscale
+  yt-dlp
+  docker-compose
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
