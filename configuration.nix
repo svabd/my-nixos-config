@@ -112,6 +112,8 @@
   docker-compose
   direnv
   ytdl-sub
+  home-manager
+  neovim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
