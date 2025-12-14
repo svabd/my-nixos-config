@@ -1,5 +1,4 @@
 {
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
@@ -9,15 +8,27 @@
     };
   };
 
-  outputs = inputs: {
-
-    nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
-      modules = [
-        { nix.settings.experimental-features = ["nix-command" "flakes"]; }
-        ./configuration.nix
-      ];
+  outputs = {inputs, self, nixpkgs, ...}@inputs: {
+  let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
+      };
     };
-
-  };
-  
+  in
+    {
+      nixosConfigurations = {
+        myNixos = nixpkgs.lib.nixosSystem = {
+          specialArgs = {
+            inherit inputs system;
+          };
+          modules = [
+            ./configuration.nix
+          ];
+        };
+      };
+    };
+  }
 }
