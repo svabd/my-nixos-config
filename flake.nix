@@ -9,7 +9,7 @@
   };
 
   outputs = {inputs, self, nixpkgs, ...}@inputs: {
-  let
+  
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
@@ -17,7 +17,7 @@
         allowUnfree = true;
       };
     };
-  in
+  
     {
       nixosConfigurations = {
         myNixos = nixpkgs.lib.nixosSystem = {
