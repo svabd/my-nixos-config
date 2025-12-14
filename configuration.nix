@@ -111,6 +111,7 @@
   yt-dlp
   docker-compose
   direnv
+  ytdl-sub
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
