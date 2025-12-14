@@ -103,17 +103,9 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
 	ungoogled-chromium
-	vscodium
 	git
 	bash
-  docker
   tailscale
-  yt-dlp
-  docker-compose
-  direnv
-  ytdl-sub
-  home-manager
-  neovim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
