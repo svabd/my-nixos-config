@@ -3,13 +3,11 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { inputs, config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
+  imports = [
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.home-manager
-    ];
+  ];
+  
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -76,13 +74,6 @@
     #media-session.enable = true;
   };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs;};
-    users = {
-      sv_abd = import ./home.nix;
-    };
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -142,5 +133,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }
