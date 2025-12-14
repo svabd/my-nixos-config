@@ -17,7 +17,7 @@
       };
     };
     nixosConfigurations = {
-      myNixos = nixpkgs.lib.nixosSystem = {
+      myNixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs system;
         };
