@@ -5,7 +5,10 @@
   };
   outputs = { self, nixpkgs }: {
       nixosConfigurations.nixos-flakes-btw = nixpkgs.lib.nixosSystem {
-          modules = [ ./configuration.nix ];
+          modules = [
+            { nix.settings.experimental-features = ["nix-command" "flakes"]; }
+            ./configuration.nix 
+          ];
     };
   };
 }
