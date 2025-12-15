@@ -28,7 +28,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-  vscodium
   docker
   yt-dlp
   docker-compose
@@ -39,6 +38,7 @@
   
   programs.vscode = {
   enable = true;
+  package = pkgs.vscodium;
   # In 25.11, all settings MUST be inside a profile. 
   # Use 'default' to apply them to your standard VS Code instance.
   profiles.default = {
