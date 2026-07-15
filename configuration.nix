@@ -101,6 +101,7 @@
   environment.systemPackages = with pkgs; [
     ungoogled-chromium
     git
+    gh
     bash
     tailscale
     google-chrome
