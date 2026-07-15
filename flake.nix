@@ -8,7 +8,7 @@
   };
   };
   outputs = { self, nixpkgs, home-manager, ...} @ inputs: {
-    nixosConfigurations.nixos-flakes-btw = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."nixos-flakes-btw" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         { nix.settings.experimental-features = ["nix-command" "flakes"]; }

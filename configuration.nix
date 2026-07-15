@@ -5,9 +5,9 @@
 { inputs, config, pkgs, ... }:
 {
   imports = [
-      ./hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
-  
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -83,7 +83,7 @@
     description = "aidan duisman";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    
+
     ];
   };
 
@@ -99,18 +99,31 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	ungoogled-chromium
-	git
-	bash
-  tailscale
-  google-chrome
-  nixpkgs-fmt
-  nixd
-  steam
-  vscodium
+    ungoogled-chromium
+    git
+    bash
+    tailscale
+    google-chrome
+    nixpkgs-fmt
+    nixd
+    steam
+    vscodium
+    vscodium.fhs
+    direnv
+    nix-direnv
   ];
+  
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  
+  programs.steam = {
+    enable = true;
+  };
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
