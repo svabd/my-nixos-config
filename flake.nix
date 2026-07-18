@@ -17,7 +17,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-          home-manager.users.sv_abd = import ./home.nix;
+          home-manager.users.sv_abd = import /home/sv_abd/.config/home-manager/flake.nix;
         }
       ];
     };

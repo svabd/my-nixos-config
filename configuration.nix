@@ -99,19 +99,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    ungoogled-chromium
-    git
-    gh
     bash
-    tailscale
-    google-chrome
-    nixpkgs-fmt
-    nixd
-    steam
-    vscodium
-    vscodium.fhs
-    direnv
-    nix-direnv
   ];
   
   programs.direnv = {
