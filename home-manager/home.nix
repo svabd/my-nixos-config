@@ -41,7 +41,6 @@
     nixd
     steam
     vscodium
-    vscodium.fhs
     direnv
     nix-direnv
     ungoogled-chromium

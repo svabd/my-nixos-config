@@ -2,10 +2,9 @@
 	"folders": [
 		{
 			"path": "/home/sv_abd/my-nixos-config"
-		},
-		{
-			"path": "/home/sv_abd/.config/home-manager"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"nixEnvSelector.suggestion": false
+	}
 }
