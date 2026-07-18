@@ -12,7 +12,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       # --- CHANGE THESE TO MATCH YOUR SYSTEM ---
       system = "x86_64-linux"; # Use "aarch64-linux", "x86_64-darwin", or "aarch64-darwin" if needed
@@ -20,7 +20,7 @@
       # -----------------------------------------
 
       pkgs = nixpkgs.legacyPackages.${system};
-      in
+    in
     {
       homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -29,7 +29,7 @@
         modules = [ ./home.nix ];
 
         # Optionally pass arguments from the flake into home.nix
-        extraSpecialArgs = { };
+        extraSpecialArgs = { inherit inputs; };
       };
     };
 }

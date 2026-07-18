@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -47,6 +47,8 @@
     git
     gh
   ];
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   
   programs.vscode = {
   package = pkgs.vscodium;
