@@ -3,11 +3,15 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: {
     nixosConfigurations."nixos-flakes-btw" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        { nix.settings.experimental-features = ["nix-command" "flakes"]; }
+        {nix.settings.experimental-features = ["nix-command" "flakes"];}
         ./configuration.nix
       ];
     };

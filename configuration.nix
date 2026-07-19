@@ -1,13 +1,15 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ inputs, config, pkgs, ... }:
 {
+  inputs,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -81,9 +83,8 @@
   users.users.sv_abd = {
     isNormalUser = true;
     description = "aidan duisman";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-
     ];
   };
 
@@ -101,19 +102,18 @@
   environment.systemPackages = with pkgs; [
     bash
   ];
-  
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
   };
 
-
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-  
+
   programs.steam = {
     enable = true;
   };
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

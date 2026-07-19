@@ -1,20 +1,22 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  
+
   nixpkgs.config.allowUnfree = true;
-  
+
   home.username = "sv_abd";
   home.homeDirectory = "/home/sv_abd";
-  
+
   programs.git = {
     enable = true;
     settings.user.name = "aidan duisman";
     settings.user.email = "duismana@gmail.com";
   };
-
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -37,7 +39,7 @@
     neovim
     tailscale
     google-chrome
-    nixpkgs-fmt
+    alejandra
     nixd
     steam
     vscodium
@@ -48,33 +50,33 @@
     gh
   ];
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-  
-  programs.vscode = {
-  package = pkgs.vscodium;
-  # In 25.11, all settings MUST be inside a profile. 
-  # Use 'default' to apply them to your standard VS Code instance.
-  profiles.default = {
-    extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-    ];
-    userSettings = {
-      "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nixd"; # Recommended LSP for 2025
-      "nix.serverSettings" = {
-        "nixd" = {
-          "formatting" = {
-            "command" = [ "nixpkgs-fmt" ];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+
+  programs.vscodium = {
+    enable = true;
+    package = pkgs.vscodium;
+    mutableExtensionsDir = false;
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+      ];
+      userSettings = {
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nixd"; # Recommended LSP for 2025
+        "nix.serverSettings" = {
+          "nixd" = {
+            "formatting" = {
+              "command" = ["${pkgs.alejandra}/bin/alejandra"];
+            };
           };
         };
-      };
-      "[nix]" = {
-        "editor.defaultFormatter" = "jnoortheen.nix-ide";
-        "editor.formatOnSave" = true;
+        "[nix]" = {
+          "editor.defaultFormatter" = "jnoortheen.nix-ide";
+          "editor.formatOnSave" = true;
+        };
       };
     };
   };
-};
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

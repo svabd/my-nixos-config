@@ -5,6 +5,8 @@
 		}
 	],
 	"settings": {
-		"nixEnvSelector.suggestion": false
+		"nix.enableLanguageServer": true,
+		"nix.formatterPath": "alejandra"
+		
 	}
 }
