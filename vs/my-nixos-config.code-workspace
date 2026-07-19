@@ -3,10 +3,5 @@
 		{
 			"path": "/home/sv_abd/my-nixos-config"
 		}
-	],
-	"settings": {
-		"nix.enableLanguageServer": true,
-		"nix.formatterPath": "alejandra"
-		
-	}
+	]
 }
