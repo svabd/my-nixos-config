@@ -48,6 +48,7 @@
     ungoogled-chromium
     git
     gh
+    siyuan
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
