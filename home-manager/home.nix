@@ -42,13 +42,23 @@
     alejandra
     nixd
     steam
-    vscodium
-    direnv
     nix-direnv
     ungoogled-chromium
     git
     gh
     siyuan
+    (
+      pkgs.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+      })
+    )
+    dunst
+    libnotify
+    awww
+    kitty
+    hyprlauncher
+    xdg-desktop-portal-gtk
+    kdePackages.dolphin
   ];
 
   programs.direnv = {
@@ -118,7 +128,9 @@
   #  /etc/profiles/per-user/sv_abd/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    #Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
   };
 
   # Let Home Manager install and manage itself.

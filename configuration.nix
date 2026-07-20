@@ -49,7 +49,8 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -104,6 +105,31 @@
   ];
 
   programs.steam.enable = true;
+
+  hardware = {
+    #Opengl
+    graphics.enable = true;
+
+    #Most wayland compositors need this
+    nvidia.modesetting.enable = true;
+  };
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
+    };
+  };
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
