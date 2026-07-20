@@ -103,16 +103,7 @@
     bash
   ];
 
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-
-  programs.steam = {
-    enable = true;
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

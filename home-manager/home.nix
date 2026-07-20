@@ -51,6 +51,15 @@
     siyuan
   ];
 
+  programs.steam = {
+    enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   programs.vscodium = {
