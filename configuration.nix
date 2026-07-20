@@ -103,6 +103,8 @@
     bash
   ];
 
+  programs.steam.enable = true;
+
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   # Some programs need SUID wrappers, can be configured further or are
