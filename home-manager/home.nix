@@ -61,6 +61,11 @@
     kdePackages.dolphin
   ];
 
+  fonts.packages = with pkgs; [
+    font-awesome # Provides basic UI and status icons
+    nerd-fonts.jetbrains-mono # Highly recommended developer font package
+  ];
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
