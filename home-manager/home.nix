@@ -59,11 +59,8 @@
     hyprlauncher
     xdg-desktop-portal-gtk
     kdePackages.dolphin
-  ];
-
-  fonts.packages = with pkgs; [
     font-awesome # Provides basic UI and status icons
-    nerd-fonts.jetbrains-mono # Highly recommended developer font package
+    nerd-fonts.jetbrains-mono
   ];
 
   programs.direnv = {
