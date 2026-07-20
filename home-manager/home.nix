@@ -49,6 +49,7 @@
     git
     gh
     siyuan
+    steam
   ];
 
   programs.steam = {
