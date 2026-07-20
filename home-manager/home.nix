@@ -49,8 +49,9 @@
     git
     gh
     siyuan
-    steam
   ];
+
+  programs.steam.enable = true;
 
   programs.direnv = {
     enable = true;
