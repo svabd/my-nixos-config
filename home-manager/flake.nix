@@ -28,7 +28,10 @@
       inherit pkgs;
 
       # Specify your home.nix file here
-      modules = [./home.nix];
+      modules = [
+        ./home.nix
+        ./hyprland.nix
+      ];
 
       # Optionally pass arguments from the flake into home.nix
       extraSpecialArgs = {inherit inputs;};
