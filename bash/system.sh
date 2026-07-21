@@ -1,1 +1,1 @@
-sudo nixos-rebuild switch --flake /home/sv_abd/my-nixos-config#nixos-flakes-btw
+sudo nixos-rebuild switch --flake /home/sv_abd/my-nixos-config#default

@@ -1,1 +1,0 @@
-home-manager switch --flake /home/sv_abd/my-nixos-config/home-manager#sv_abd -b backup

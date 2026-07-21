@@ -9,6 +9,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
   ];
 
   # Bootloader.
@@ -87,6 +88,13 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
     ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "sv_abd" = import ./home.nix;
+    };
   };
 
   # Install firefox.
