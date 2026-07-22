@@ -1,24 +1,3 @@
-/*
-Home Manager module for Hyprland, translated from hyprland.lua.
-
-Hyprland switched from the old hyprlang (.conf) syntax to Lua config in
-v0.55, and Home Manager only added `configType = "lua"` support in the
-26.05 release. That support is still new and the exact attrset shape can
-change, so before relying on this:
-  - Check `home-manager option wayland.windowManager.hyprland.settings`
-    (or search.nixos.org) against the HM version you're on.
-  - Run `home-manager build` (or a dry-run) and diff the generated
-    ~/.config/hypr/hyprland.lua against your original file.
-
-Pattern used below:
-  - Functions that take ONE table arg (hl.config, hl.window_rule,
-    hl.animation, hl.device, hl.gesture, hl.monitor) map straight to a
-    Nix attrset. Repeat the call -> use a list of attrsets.
-  - Functions that take MULTIPLE positional args (hl.bind, hl.on,
-    hl.env, hl.curve) need `_args = [ ... ]`, where any argument that's
-    actual Lua code (a dispatcher call, a function body) is wrapped in
-    `lib.generators.mkLuaInline` so it's emitted unquoted.
-*/
 {lib, ...}: let
   lua = lib.generators.mkLuaInline;
 
