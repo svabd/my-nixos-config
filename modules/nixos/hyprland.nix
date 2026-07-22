@@ -7,8 +7,6 @@
     hyprland
   ];
 
-  # greetd with tuigreet: shows a login prompt on boot, and
-  # launches Hyprland automatically once you enter your credentials.
   services.greetd = {
     enable = true;
     settings = {

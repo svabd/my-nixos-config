@@ -14,7 +14,7 @@
       ];
       userSettings = {
         "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nixd"; # Recommended LSP for 2025
+        "nix.serverPath" = "nixd";
         "nix.serverSettings" = {
           "nixd" = {
             "formatting" = {
