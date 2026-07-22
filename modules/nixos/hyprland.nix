@@ -3,7 +3,7 @@
     enable = true;
     xwayland.enable = true;
   };
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     hyprland
   ];
 }
