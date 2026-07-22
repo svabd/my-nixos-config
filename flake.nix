@@ -24,18 +24,7 @@
         inputs.home-manager.nixosModules.default
         {
           home-manager.extraSpecialArgs = {inherit inputs;};
-          home-manager.users.sv_abd = import {
-            imports = [
-              ./hosts/default/home.nix
-
-              #config
-              ./modules/home-manager/config/hyprland-config-1.nix
-              ./modules/home-manager/config/vscodium-config-1.nix
-
-              #simple programs
-              ./modules/home-manager/programs/steam.nix
-            ];
-          };
+          home-manager.users.sv_abd = import ./hosts/default/home.nix;
         }
       ];
     };
