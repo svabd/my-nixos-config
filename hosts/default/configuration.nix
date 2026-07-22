@@ -46,19 +46,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-
   services.gnome.gnome-keyring.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -87,8 +75,6 @@
     isNormalUser = true;
     description = "aidan duisman";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-    ];
   };
 
   # Install firefox.
@@ -112,11 +98,6 @@
 
     #Most wayland compositors need this
     nvidia.modesetting.enable = true;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
   };
 
   xdg.portal = {
