@@ -10,7 +10,6 @@
     ./../../modules/home-manager/config/vscodium-config-1.nix
 
     #simple programs
-    ./../../modules/home-manager/programs/steam.nix
   ];
   nixpkgs.config.allowUnfree = true;
 

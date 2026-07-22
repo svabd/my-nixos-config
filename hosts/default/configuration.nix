@@ -10,6 +10,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    ./../../modules/nixos/steam.nix
   ];
 
   # Bootloader.
