@@ -1,1 +1,1 @@
-nix-collect-garbage
+sudo nix-collect-garbage --delete-older-than 100d
