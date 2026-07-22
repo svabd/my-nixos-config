@@ -5,6 +5,7 @@
   };
   environment.systemPackages = with pkgs; [
     hyprland
+    tuigreet
   ];
 
   # greetd with tuigreet: shows a login prompt on boot, and
@@ -13,7 +14,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd Hyprland";
       };
     };
   };
