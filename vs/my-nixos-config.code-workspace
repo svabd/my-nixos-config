@@ -3,5 +3,8 @@
 		{
 			"path": "/home/sv_abd/my-nixos-config"
 		}
-	]
+	],
+	"settings": {
+		"nixEnvSelector.suggestion": false
+	}
 }

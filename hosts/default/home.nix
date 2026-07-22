@@ -4,6 +4,9 @@
   inputs,
   ...
 }: {
+  imports = [
+    ./../../modules/home-manager/hyprland.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
 
@@ -61,6 +64,7 @@
     kdePackages.dolphin
     font-awesome # Provides basic UI and status icons
     nerd-fonts.jetbrains-mono
+    cargo
   ];
 
   programs.direnv = {
@@ -79,6 +83,7 @@
         jnoortheen.nix-ide
         arrterian.nix-env-selector
         mkhl.direnv
+        rust-lang.rust-analyzer
       ];
       userSettings = {
         "nix.enableLanguageServer" = true;

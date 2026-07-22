@@ -22,6 +22,12 @@
         {nix.settings.experimental-features = ["nix-command" "flakes"];}
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
+        {
+          home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager.users.sv_abd = import [
+            ./hosts/default/home.nix
+          ];
+        }
       ];
     };
   };
