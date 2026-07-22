@@ -73,6 +73,11 @@ Pattern used below:
     ])
     (lib.range 1 10);
 in {
+  imports = [
+    ./../programs/hyprland.nix
+    ./../programs/classic-hyprland-programs.nix
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "lua";

@@ -105,8 +105,6 @@
     bash
   ];
 
-  programs.steam.enable = true;
-
   hardware = {
     #Opengl
     graphics.enable = true;
