@@ -38,9 +38,8 @@
     git
     gh
     siyuan
+    mission-center
   ];
-
-  programs.btop.enable = true;
 
   programs.direnv = {
     enable = true;
