@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./yt-dlp
+    ./yt-dlp.nix
   ];
   home.packages = with pkgs; [
     ytdl-sub
