@@ -7,6 +7,7 @@
     #config
     ./../../modules/home-manager/config/hyprland-config-1.nix
     ./../../modules/home-manager/config/vscodium-config-1.nix
+    ./../../modules/home-manager/config/ytdl-sub-jellyfin-setup.nix
 
     #simple programs
   ];
@@ -25,10 +26,8 @@
 
   home.packages = with pkgs; [
     docker
-    yt-dlp
     docker-compose
     direnv
-    ytdl-sub
     neovim
     tailscale
     google-chrome
