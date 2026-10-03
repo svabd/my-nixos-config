@@ -10,6 +10,7 @@
     ./../../modules/home-manager/config/ytdl-sub-jellyfin-setup.nix
 
     #simple programs
+    ./../../modules/home-manager/programs/tree-sitter.nix
   ];
   nixpkgs.config.allowUnfree = true;
 
