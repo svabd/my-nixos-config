@@ -80,7 +80,7 @@
       "node_modules/"
     ];
   };
-  home.pkgs = with pkgs; [
+  home.packages = with pkgs; [
     ripgrep
   ];
   programs.bat = {
