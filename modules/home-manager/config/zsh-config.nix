@@ -3,9 +3,6 @@
   config,
   ...
 }: {
-  imports = [
-    ./../programs/zsh.nix
-  ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
