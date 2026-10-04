@@ -123,4 +123,13 @@
       set -g default-terminal "screen-256color"
     '';
   };
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Your Name";
+        email = "your.email@example.com";
+      };
+    };
+  };
 }
