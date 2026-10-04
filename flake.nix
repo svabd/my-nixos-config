@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvf.url = "github:notashelf/nvf";
   };
   outputs = {
     self,
@@ -20,7 +21,8 @@
       specialArgs = {inherit inputs;};
       modules = [
         {nix.settings.experimental-features = ["nix-command" "flakes"];}
-        ./hosts/default/configuration.nix
+        nvf.nixosModules.default
+	./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
         {
           home-manager.extraSpecialArgs = {inherit inputs;};
