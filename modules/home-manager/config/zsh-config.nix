@@ -90,4 +90,16 @@
       pager = "less -FR";
     };
   };
+  programs.starship = {
+    enable = true;
+    # Automatically integrates with bash, zsh, fish, etc.
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+
+    # Write your starship.toml configurations here
+    settings = {
+      add_newline = false;
+      format = "$all";
+    };
+  };
 }
