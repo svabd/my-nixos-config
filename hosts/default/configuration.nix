@@ -107,8 +107,8 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
+      ll = "ls -l -a";
+      update = "sudo zsh /home/sv_abd/my-nixos-config/bash/system.sh";
     };
 
     histSize = 10000;

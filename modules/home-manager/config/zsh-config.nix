@@ -11,7 +11,7 @@
 
     shellAliases = {
       ll = "ls -l -a";
-      update = "sudo /home/sv_abd/my-nixos-config/bash/system.sh";
+      update = "sudo zsh /home/sv_abd/my-nixos-config/bash/system.sh";
     };
 
     history = {
