@@ -35,4 +35,13 @@
       }
     ];
   };
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
+    # Optional: Replace the standard 'cd' command with zoxide entirely
+    options = ["--cmd cd"];
+  };
 }
