@@ -33,6 +33,11 @@
           sha256 = "sha256-Z6EYQdasvpl1P78poj9efnnLj7QQg13Me8x1Ryyw+dM=";
         };
       }
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
     ];
   };
   programs.zoxide = {
@@ -43,5 +48,9 @@
     enableNushellIntegration = true;
     # Optional: Replace the standard 'cd' command with zoxide entirely
     options = ["--cmd cd"];
+  };
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
