@@ -61,6 +61,7 @@
     isNormalUser = true;
     description = "aidan duisman";
     extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
   };
 
   # Install firefox.
@@ -95,6 +96,28 @@
     config = {
       common.default = ["gtk"];
       hyprland.default = ["hyprland" "gtk"];
+    };
+  };
+
+  # 1. Enable Zsh system-wide
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch";
+    };
+
+    histSize = 10000;
+
+    # Optional: Configure Oh My Zsh globally
+    ohMyZsh = {
+      enable = true;
+      plugins = ["git" "sudo"];
+      theme = "robbyrussell"; # Choose your theme
     };
   };
 
