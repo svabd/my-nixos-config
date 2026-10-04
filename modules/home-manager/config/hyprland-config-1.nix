@@ -1,4 +1,8 @@
-{lib, ...}: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   lua = lib.generators.mkLuaInline;
 
   # ---- small helpers to keep the bind/on lists readable ----
@@ -55,6 +59,8 @@ in {
   imports = [
     ./../programs/classic-hyprland-programs.nix
   ];
+
+  programs.kitty.shell = pkgs.zsh;
 
   wayland.windowManager.hyprland = {
     enable = true;
