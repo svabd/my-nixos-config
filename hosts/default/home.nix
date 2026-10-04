@@ -8,6 +8,7 @@
     ./../../modules/home-manager/config/hyprland-config-1.nix
     ./../../modules/home-manager/config/vscodium-config-1.nix
     ./../../modules/home-manager/config/ytdl-sub-jellyfin-setup.nix
+    ./../../modules/home-manager/config/zsh-config.nix
 
     #simple programs
     ./../../modules/home-manager/programs/tree-sitter.nix
