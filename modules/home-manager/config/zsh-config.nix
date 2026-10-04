@@ -127,8 +127,8 @@
     enable = true;
     settings = {
       user = {
-        name = "Your Name";
-        email = "your.email@example.com";
+        name = "sv_abd";
+        email = "duismana@gmail.com";
       };
     };
   };
