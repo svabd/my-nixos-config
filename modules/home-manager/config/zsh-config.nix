@@ -12,6 +12,7 @@
     shellAliases = {
       ll = "ls -l -a";
       update = "sudo zsh /home/sv_abd/my-nixos-config/bash/system.sh";
+      garbage-collect = "sudo zsh /home/sv_abd/my-nixos-config/bash/nixos-garbage-collect.sh";
     };
 
     history = {
