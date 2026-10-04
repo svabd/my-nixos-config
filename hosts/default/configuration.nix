@@ -107,7 +107,11 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ll = "ls -l -a";
+      ls = "eza --icons";
+      ll = "eza -lh --icons --git";
+      la = "eza -lah --icons --git";
+      tree = "eza --tree --icons";
+      grep = "rg --color=auto";
       update = "sudo zsh /home/sv_abd/my-nixos-config/bash/system.sh";
       collect = "sudo zsh /home/sv_abd/my-nixos-config/bash/nixos-garbage-collect.sh";
     };

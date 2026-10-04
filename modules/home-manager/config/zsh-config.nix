@@ -10,7 +10,11 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ll = "ls -l -a";
+      ls = "eza --icons";
+      ll = "eza -lh --icons --git";
+      la = "eza -lah --icons --git";
+      tree = "eza --tree --icons";
+      grep = "rg --color=auto";
       update = "sudo zsh /home/sv_abd/my-nixos-config/bash/system.sh";
       collect = "sudo zsh /home/sv_abd/my-nixos-config/bash/nixos-garbage-collect.sh";
     };
@@ -52,5 +56,38 @@
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+  };
+  programs.eza = {
+    enable = true;
+    git = true;
+    icons = "auto"; # Options: "always", "auto", "never"
+    extraOptions = [
+      "--group-directories-first"
+      "--header"
+    ];
+
+    # Enable shell-specific integrations to automatically alias `ls` to `eza`
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
+  };
+  programs.fd = {
+    enable = true;
+    hidden = true; # Include hidden files by default
+    ignores = [
+      ".git/"
+      "node_modules/"
+    ];
+  };
+  home.pkgs = with pkgs; [
+    ripgrep
+  ];
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "GitHub";
+      pager = "less -FR";
+    };
   };
 }
