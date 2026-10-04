@@ -125,6 +125,46 @@
       theme = "robbyrussell"; # Choose your theme
     };
   };
+  
+  programs.nvf = {
+    enable = true;
+    
+    settings = {
+      # Core options
+      vim = {
+        viAlias = true;
+        vimAlias = true;
+        preventJunkFiles = true;
+        
+        # Theme configuration
+        theme = {
+          enable = true;
+          name = "catppuccin";
+          style = "mocha";
+        };
+
+        # Visual and UI elements
+        statusline.lualine.enable = true;
+        telescope.enable = true;
+        autocomplete.blink-cmp.enable = true;
+        
+        # File tree navigation
+        filetree.neo-tree.enable = true;
+
+        # Treesitter and LSP Settings
+        languages = {
+          enableLSP = true;
+          enableTreesitter = true;
+
+          # Enable specific language support seamlessly
+          nix.enable = true;
+          markdown.enable = true;
+          rust.enable = true;
+        };
+      };
+    };
+  };
+
 
   services.openssh.enable = false;
 
