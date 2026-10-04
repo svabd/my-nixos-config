@@ -60,8 +60,6 @@ in {
     ./../programs/classic-hyprland-programs.nix
   ];
 
-  programs.kitty.shell = pkgs.zsh;
-
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "lua";
