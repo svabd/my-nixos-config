@@ -29,7 +29,6 @@
           owner = "chisui";
           repo = "zsh-nix-shell";
           rev = "v0.8.0";
-          sha256 = "sha256-Z5v29o+8wFC29vT3f84xI8j9F++b78K6UHIw86UfFGM=";
         };
       }
     ];
