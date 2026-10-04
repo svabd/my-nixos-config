@@ -34,5 +34,4 @@
       }
     ];
   };
-  shell = pkgs.zsh;
 }
