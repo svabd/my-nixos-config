@@ -102,4 +102,25 @@
       format = "$all";
     };
   };
+  programs.tmux = {
+    enable = true;
+    mouse = true; # Enable mouse scrolling and pane selection
+    historyLimit = 10000; # Boost history limit
+    newSession = true; # Automatically spawn a session if trying to attach and none exist
+
+    plugins = with pkgs.tmuxPlugins; [
+      {
+        plugin = catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavor 'mocha'
+        '';
+      }
+      yank
+    ];
+
+    extraConfig = ''
+      # Enable 256 color terminal support
+      set -g default-terminal "screen-256color"
+    '';
+  };
 }
