@@ -9,22 +9,11 @@
     ./../../modules/home-manager/config/vscodium-config-1.nix
     ./../../modules/home-manager/config/ytdl-sub-jellyfin-setup.nix
     ./../../modules/home-manager/config/zsh-config.nix
+    ./../../modules/home-manager/config/update.nix
 
     #simple programs
     ./../../modules/home-manager/programs/tree-sitter.nix
   ];
-  
-  
-             options = {
-               mySystem = {
-                 updateScript = lib.mkOption {
-                   type = lib.types.str;
-                   default = "sudo zsh /home/sv_abd/my-nixos-config/bash/system.sh";
-                   description = "The primary username for this machine.";
-                 };
-               };
-             };
-  config = {
 
   nixpkgs.config.allowUnfree = true;
 
@@ -72,5 +61,4 @@
   };
 
   programs.home-manager.enable = true;
-  }
 }
