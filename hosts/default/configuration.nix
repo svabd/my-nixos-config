@@ -171,7 +171,9 @@
     };
   };
 
-
+  services.gvfs.enable = true;
+  
+  services.gvfs.enable = true;
 
   services.openssh.enable = false;
 
