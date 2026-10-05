@@ -13,6 +13,19 @@
     #simple programs
     ./../../modules/home-manager/programs/tree-sitter.nix
   ];
+  
+  
+             options = {
+               mySystem = {
+                 updateScript = lib.mkOption {
+                   type = lib.types.str;
+                   default = "sudo zsh /home/sv_abd/my-nixos-config/bash/system.sh";
+                   description = "The primary username for this machine.";
+                 };
+               };
+             };
+  config = {
+
   nixpkgs.config.allowUnfree = true;
 
   home.username = "sv_abd";
@@ -59,4 +72,5 @@
   };
 
   programs.home-manager.enable = true;
+  }
 }

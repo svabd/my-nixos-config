@@ -22,8 +22,6 @@
       };
   };
 
-  config = {
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -189,5 +187,4 @@
   services.openssh.enable = false;
 
   system.stateVersion = "25.11";
-  };
 }
