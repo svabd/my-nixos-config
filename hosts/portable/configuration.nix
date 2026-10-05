@@ -192,6 +192,16 @@ boot.loader.grub = {
   efiInstallAsRemovable = true;
 };
 
+  fileSystems."/" = {
+    device = "";
+    fsType = "";
+  };
+
+  fileSystems."/boot" = {
+    device = "";
+    fsType = "";
+    options = [];
+  };
 
   services.openssh.enable = false;
 
