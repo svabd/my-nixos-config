@@ -78,6 +78,17 @@
     neovim
   ];
 
+  environment.sessionVariables = {
+  # Forces Electron and Chromium apps (like Chrome/VS Code) to run natively in Wayland mode
+  NIXOS_OZONE_WL = "1";
+  
+  # Required hardware acceleration strings for modern Nvidia drivers on Wayland
+  GBM_BACKEND = "nvidia-drm";
+  __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+  LIBVA_DRIVER_NAME = "nvidia";
+  };
+
+
   hardware = {
     #Opengl
     graphics.enable = true;
