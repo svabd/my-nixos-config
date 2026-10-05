@@ -193,15 +193,18 @@ boot.loader.grub = {
 };
 
   fileSystems."/" = {
-    device = "";
-    fsType = "";
+    device = "/dev/mapper/luks-5c34bc27-2798-4ef2-8a09-a2b284d1b39b";
+    fsType = "ext4";
   };
 
-  fileSystems."/boot" = {
-    device = "";
-    fsType = "";
-    options = [];
-  };
+  boot.initrd.luks.devices."luks-5c34bc27-2798-4ef2-8a09-a2b284d1b39b".device = "/dev/disk/by-uuid/5c34bc27-2798-4ef2-8a09-a2b284d1b39b";
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/7B3C-A4FC";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
 
   services.openssh.enable = false;
 
