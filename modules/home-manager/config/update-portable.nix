@@ -4,6 +4,6 @@
   ];
 
   config = {
-    updateScript = "sudo zsh /home/sv_abd/my-nixos-config/bash/portable.sh";
+    mySystem.updateScript = "sudo zsh /home/sv_abd/my-nixos-config/bash/portable.sh";
   };
 }
