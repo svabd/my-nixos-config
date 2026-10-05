@@ -152,10 +152,16 @@
         # File tree navigation
         filetree.neo-tree.enable = true;
 
+	programs.nvf.settings.vim = {
+        
+	# Enable LSP globally here
+        lsp.enable = true;
+
         # Treesitter and LSP Settings
         languages = {
-          enableLSP = true;
           enableTreesitter = true;
+          enableFormat = true;
+          enableDAP = true;
 
           # Enable specific language support seamlessly
           nix.enable = true;
