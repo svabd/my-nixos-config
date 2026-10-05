@@ -11,7 +11,8 @@
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
   ];
-  
+
+  nixpkgs.hostPlatform = "x86-64";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
