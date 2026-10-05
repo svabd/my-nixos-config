@@ -65,7 +65,7 @@ in {
     configType = "lua";
 
     # Set to `true` instead if you are NOT launching via UWSM.
-    systemd.enable = false;
+    systemd.enable = true;
 
     settings = {
       #      ------------------------------------------------------------------
