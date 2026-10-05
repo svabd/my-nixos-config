@@ -13,6 +13,7 @@
     self,
     nixpkgs,
     nvf,
+    lib,
     ...
   } @ inputs: let
     system = "x86_64-linux";
