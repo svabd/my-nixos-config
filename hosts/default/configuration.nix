@@ -13,7 +13,6 @@
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
   ];
-
   
   options = {
     mySystem = {
@@ -24,6 +23,8 @@
       };
     };
   };
+
+  config = {
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -190,4 +191,5 @@
   services.openssh.enable = false;
 
   system.stateVersion = "25.11";
+  };
 }
