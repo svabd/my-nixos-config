@@ -78,7 +78,7 @@
   environment.systemPackages = with pkgs; [
     bash
     git
-    nvim
+    neovim
   ];
 
   hardware = {
