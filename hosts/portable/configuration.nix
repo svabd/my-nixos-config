@@ -14,10 +14,6 @@
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   boot.initrd.luks.devices."luks-08b95d12-2e5d-499b-afc4-26333f868c7b".device = "/dev/disk/by-uuid/08b95d12-2e5d-499b-afc4-26333f868c7b";
   networking.hostName = "nixos";
 
@@ -176,14 +172,25 @@
   
   services.udisks2.enable = true;
 
-  # Enable all hardware drivers for maximum portability
-hardware.enableAllFirmware = true;
+  # Disable systemd-boot if it was enabled by default
+boot.loader.systemd-boot.enable = false;
 
-# Ensure the bootloader targets generic UEFI/BIOS entry points
-boot.loader.grub.enable = true;
-boot.loader.grub.device = "nodev";
-boot.loader.grub.efiSupport = true;
-boot.loader.grub.removable = true; # Crucial for portable USB booting
+boot.loader.efi = {
+  # Prevent NixOS from modifying the current host computer's NVRAM variables.
+  # This keeps your portable USB completely independent of the machine it's plugged into.
+  canTouchEfiVariables = false;
+};
+
+boot.loader.grub = {
+  enable = true;
+  efiSupport = true;
+  device = "nodev"; # "nodev" tells GRUB we are installing via EFI, not standard MBR
+  
+  # THIS IS THE CORRECT OPTION NAME:
+  # It forces GRUB to install to the fallback EFI path (\EFI\BOOT\BOOTX64.EFI) 
+  # which allows any computer's BIOS to see and boot the drive automatically.
+  efiInstallAsRemovable = true;
+};
 
 
   services.openssh.enable = false;
