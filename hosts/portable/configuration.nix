@@ -15,7 +15,7 @@
   nixpkgs.hostPlatform = "x86_64-linux";
 
   boot.initrd.luks.devices."luks-08b95d12-2e5d-499b-afc4-26333f868c7b".device = "/dev/disk/by-uuid/08b95d12-2e5d-499b-afc4-26333f868c7b";
-  networking.hostName = "nixos";
+  networking.hostName = "svabd-nixos-portable";
 
   # Enable networking
   networking.networkmanager.enable = true;
