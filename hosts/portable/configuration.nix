@@ -97,7 +97,14 @@
     graphics.enable = true;
 
     #Most wayland compositors need this
-    nvidia.modesetting.enable = true;
+    nvidia = {
+    # This turns on DRM modesetting, allowing Hyprland to boot
+    modesetting.enable = true;
+    
+    # Required to make sure NixOS pulls in the correct Nvidia setup blocks
+    powerManagement.enable = false;
+    open = false;
+  };
   };
 
   xdg.portal = {
