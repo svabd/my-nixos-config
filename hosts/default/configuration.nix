@@ -4,6 +4,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -12,6 +13,17 @@
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
   ];
+
+  
+  options = {
+    mySystem = {
+      updateScript = lib.mkOption {
+        type = lib.types.str;
+        default = "sudo zsh /home/sv_abd/my-nixos-config/bash/system.sh";
+        description = "The primary username for this machine.";
+      };
+    };
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

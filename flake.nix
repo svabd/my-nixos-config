@@ -13,7 +13,6 @@
     self,
     nixpkgs,
     nvf,
-    lib,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -54,7 +53,7 @@
             home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.sv_abd = import ./hosts/portable/home.nix;
           }
-          {
+            {
              options = {
                mySystem = {
                  updateScript = lib.mkOption {
