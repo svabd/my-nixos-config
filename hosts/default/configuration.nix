@@ -127,7 +127,7 @@
     };
   };
   
-  programs.nvf = {
+    programs.nvf = {
     enable = true;
     
     settings = {
@@ -151,10 +151,8 @@
         
         # File tree navigation
         filetree.neo-tree.enable = true;
-
-	programs.nvf.settings.vim = {
         
-	# Enable LSP globally here
+        # Enable LSP globally here
         lsp.enable = true;
 
         # Treesitter and LSP Settings
@@ -171,6 +169,7 @@
       };
     };
   };
+
 
 
   services.openssh.enable = false;
