@@ -1,0 +1,1 @@
+nixos-rebuild switch --flake /home/sv_abd/my-nixos-config/#portable
