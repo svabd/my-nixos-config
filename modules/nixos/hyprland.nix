@@ -11,8 +11,10 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-user --vt 7 --cmd Hyprland";
       };
     };
   };
+
+  security.polkit.enable = true;
 }
