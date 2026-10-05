@@ -30,7 +30,6 @@
     docker
     docker-compose
     direnv
-    neovim
     tailscale
     google-chrome
     alejandra

@@ -78,6 +78,7 @@
   environment.systemPackages = with pkgs; [
     bash
     git
+    nvim
   ];
 
   hardware = {
@@ -127,8 +128,8 @@
     };
   };
   
-    programs.nvf = {
-    enable = true;
+  programs.nvf = {
+  enable = true;
     
     settings = {
       # Core options
