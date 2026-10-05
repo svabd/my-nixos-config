@@ -12,7 +12,7 @@
     ./../../modules/nixos/hyprland.nix
   ];
 
-  nixpkgs.hostPlatform = "x86-64";
+  nixpkgs.hostPlatform = "x86_64-linux";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
