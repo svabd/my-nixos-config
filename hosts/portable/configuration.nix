@@ -12,11 +12,9 @@
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
   ];
-  services.displayManager.enable = true;
-
-
-  services.displayManager.sddm.enable = lib.mkForce false; 
-  services.desktopManager.plasma6.enable = lib.mkForce false;
+  services.displayManager.sddm.enable = lib.mkForce false;
+services.displayManager.plasma-login-manager.enable = lib.mkForce false;
+services.desktopManager.plasma6.enable = lib.mkForce false;
   nixpkgs.hostPlatform = "x86_64-linux";
 
   boot.initrd.luks.devices."luks-08b95d12-2e5d-499b-afc4-26333f868c7b".device = "/dev/disk/by-uuid/08b95d12-2e5d-499b-afc4-26333f868c7b";
