@@ -13,6 +13,17 @@
     ./../../modules/nixos/hyprland.nix
   ];
 
+    services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        # Explicitly declare the user running the greeter interface (usually "greeter")
+        user = "greeter";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-user --vt 7 --cmd Hyprland";
+      };
+    };
+  };
+
   services.displayManager.sddm.enable = lib.mkForce false; 
   services.desktopManager.plasma6.enable = lib.mkForce false;
   nixpkgs.hostPlatform = "x86_64-linux";
