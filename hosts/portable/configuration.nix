@@ -12,7 +12,7 @@
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
   ];
-
+  services.displayManager.genericLinear.enable = true;
     services.greetd = {
     enable = true;
     settings = {
@@ -91,6 +91,7 @@
     bash
     git
     neovim
+    tuigreet
   ];
 
   environment.sessionVariables = {
