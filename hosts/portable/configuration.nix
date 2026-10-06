@@ -17,12 +17,13 @@
     enable = true;
     settings = {
       default_session = {
-        # Explicitly declare the user running the greeter interface (usually "greeter")
         user = "greeter";
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --remember-user --vt 7 --cmd Hyprland";
+        # Change pkgs.greetd.tuigreet to pkgs.tuigreet
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-user --vt 7 --cmd Hyprland";
       };
     };
   };
+
 
   services.displayManager.sddm.enable = lib.mkForce false; 
   services.desktopManager.plasma6.enable = lib.mkForce false;
