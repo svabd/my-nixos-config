@@ -19,7 +19,7 @@
       default_session = {
         user = "greeter";
         # Change pkgs.greetd.tuigreet to pkgs.tuigreet
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-user --vt 7 --cmd Hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-user --no-xdisplay-check --cmd Hyprland";
       };
     };
   };
