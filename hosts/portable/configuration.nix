@@ -13,16 +13,6 @@
     ./../../modules/nixos/hyprland.nix
   ];
   services.displayManager.enable = true;
-    services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        user = "greeter";
-        # Change pkgs.greetd.tuigreet to pkgs.tuigreet
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-user --no-xdisplay-check --cmd Hyprland";
-      };
-    };
-  };
 
 
   services.displayManager.sddm.enable = lib.mkForce false; 
