@@ -41,6 +41,7 @@
     gh
     siyuan
     mission-center
+    atlauncher
   ];
 
   programs.direnv = {
