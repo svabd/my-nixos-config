@@ -18,7 +18,7 @@
       default_session = {
         user = "greeter";
         # Standard robust Wayland tuigreet command
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd start-hyprland";
       };
     };
   };
