@@ -19,6 +19,17 @@ services.desktopManager.plasma6.enable = lib.mkForce false;
 
   networking.hostName = "svabd-nixos-portable";
 
+    # Portable drive: boot on unknown hardware
+  hardware.enableAllHardware = true;
+  hardware.enableRedistributableFirmware = true;
+  boot.initrd.availableKernelModules = [
+    "xhci_pci" "ehci_pci" "ahci" "nvme" "usb_storage" "uas"
+    "sd_mod" "sdhci_pci" "usbhid" "thunderbolt"
+  ];
+
+  # Actually load the proprietary Nvidia driver for Hyprland
+  services.xserver.videoDrivers = ["nvidia"];
+
   # Enable networking
   networking.networkmanager.enable = true;
 
