@@ -90,6 +90,7 @@ services.desktopManager.plasma6.enable = lib.mkForce false;
     git
     neovim
     tuigreet
+    google-chrome
   ];
 
   environment.sessionVariables = {
