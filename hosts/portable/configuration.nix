@@ -197,7 +197,7 @@ services.desktopManager.plasma6.enable = lib.mkForce false;
             enable = true;
             format = {
               enable = true;
-              type = "alejandra";
+              type = [ "alejandra" ];
             };  
           };
           markdown.enable = true;
