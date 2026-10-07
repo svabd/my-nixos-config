@@ -193,7 +193,13 @@ services.desktopManager.plasma6.enable = lib.mkForce false;
           enableDAP = true;
 
           # Enable specific language support seamlessly
-          nix.enable = true;
+          nix = {
+            enable = true;
+            format = {
+              enable = true;
+              type = "alejandra";
+            };  
+          };
           markdown.enable = true;
           rust.enable = true;
         };
