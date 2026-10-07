@@ -22,7 +22,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         {nix.settings.experimental-features = ["nix-command" "flakes"];}
-	nvf.nixosModules.default
+        nvf.nixosModules.default
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
         {
@@ -32,17 +32,17 @@
       ];
     };
     nixosConfigurations."portable" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          {nix.settings.experimental-features = ["nix-command" "flakes"];}
-          nvf.nixosModules.default
-          ./hosts/portable/configuration.nix
-          inputs.home-manager.nixosModules.default
-          {
-            home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.users.sv_abd = import ./hosts/portable/home.nix;
-          }
-        ];
+      specialArgs = {inherit inputs;};
+      modules = [
+        {nix.settings.experimental-features = ["nix-command" "flakes"];}
+        nvf.nixosModules.default
+        ./hosts/portable/configuration.nix
+        inputs.home-manager.nixosModules.default
+        {
+          home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager.users.sv_abd = import ./hosts/portable/home.nix;
+        }
+      ];
     };
   };
 }
