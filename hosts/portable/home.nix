@@ -70,6 +70,25 @@
     };
   };
 
+  # 1. Define the universal cursor configuration
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+    package = pkgs.bibata-cursors;
+  };
+
+  # 2. Sync with GTK settings directly
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      size = 24;
+      package = pkgs.bibata-cursors;
+    };
+  };
+
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   home.file = {
