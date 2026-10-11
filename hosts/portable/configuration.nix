@@ -8,7 +8,6 @@
   ...
 }: {
   imports = [
-    inputs.home-manager.nixosModules.default
     inputs.noctalia.homeModules.default
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
