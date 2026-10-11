@@ -1,10 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    (
-      pkgs.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
-      })
-    )
     dunst
     libnotify
     awww
