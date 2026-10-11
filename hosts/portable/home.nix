@@ -27,8 +27,6 @@
     settings.user.email = "duismana@gmail.com";
   };
 
-  backupFileExtension = "backup";
-
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [

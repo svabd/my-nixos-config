@@ -45,6 +45,7 @@
         {
           home-manager.extraSpecialArgs = {inherit inputs;};
           home-manager.users.sv_abd = import ./hosts/portable/home.nix;
+          home-manager.backupFileExtension = "backup";
         }
       ];
     };
