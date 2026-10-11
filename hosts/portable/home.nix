@@ -60,7 +60,7 @@
 
   programs.noctalia = {
     enable = true;
-    
+
     # Optional settings structure writing to ~/.config/noctalia/config.toml
     settings = {
       bar = {
@@ -69,7 +69,6 @@
       };
     };
   };
-
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 

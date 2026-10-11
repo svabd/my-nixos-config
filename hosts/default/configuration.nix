@@ -128,17 +128,17 @@
       theme = "robbyrussell"; # Choose your theme
     };
   };
-  
+
   programs.nvf = {
-  enable = true;
-    
+    enable = true;
+
     settings = {
       # Core options
       vim = {
         viAlias = true;
         vimAlias = true;
         preventJunkFiles = true;
-        
+
         # Theme configuration
         theme = {
           enable = true;
@@ -150,10 +150,10 @@
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.blink-cmp.enable = true;
-        
+
         # File tree navigation
         filetree.neo-tree.enable = true;
-        
+
         # Enable LSP globally here
         lsp.enable = true;
 
@@ -173,7 +173,7 @@
   };
 
   services.gvfs.enable = true;
-  
+
   services.udisks2.enable = true;
 
   services.openssh.enable = false;

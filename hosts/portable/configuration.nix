@@ -11,6 +11,19 @@
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
   ];
+
+  # Enable Bluetooth hardware and turn it on by default
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  # Required system services for Noctalia's bar integration
+  services.upower.enable = true;
+
+  # GUI Bluetooth Manager (Optional, but useful for pairing)
+  services.blueman.enable = true;
+
   services.displayManager.sddm.enable = lib.mkForce false;
   services.displayManager.plasma-login-manager.enable = lib.mkForce false;
   services.desktopManager.plasma6.enable = lib.mkForce false;
