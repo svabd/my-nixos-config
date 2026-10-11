@@ -137,18 +137,6 @@
     };
   };
 
-  programs.noctalia = {
-    enable = true;
-    
-    # Optional settings structure writing to ~/.config/noctalia/config.toml
-    settings = {
-      bar = {
-        position = "top";
-        transparent = true;
-      };
-    };
-  };
-
   # 1. Enable Zsh system-wide
   programs.zsh = {
     enable = true;

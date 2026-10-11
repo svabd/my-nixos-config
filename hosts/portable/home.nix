@@ -58,6 +58,19 @@
     nix-direnv.enable = true;
   };
 
+  programs.noctalia = {
+    enable = true;
+    
+    # Optional settings structure writing to ~/.config/noctalia/config.toml
+    settings = {
+      bar = {
+        position = "top";
+        transparent = true;
+      };
+    };
+  };
+
+
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   home.file = {
