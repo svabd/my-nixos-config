@@ -5,6 +5,7 @@
   inputs,
   pkgs,
   lib,
+  config,
   ...
 }: {
   imports = [
@@ -12,10 +13,10 @@
     ./../../modules/nixos/hyprland.nix
   ];
 
-  hardware.xpadneo.enable = true; 
-  
+  hardware.xpadneo.enable = true;
+
   boot = {
-    extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
+    extraModulePackages = with config.boot.kernelPackages; [xpadneo];
     extraModprobeConfig = ''
       options bluetooth disable_ertm=Y
     '';
@@ -26,7 +27,7 @@
     enable = true;
     powerOnBoot = true;
     settings.General = {
-      Experimental = true;      # Shows controller battery status
+      Experimental = true; # Shows controller battery status
       Privacy = "device";
       JustWorksRepairing = "always";
       Class = "0x000100";
