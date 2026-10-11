@@ -4,6 +4,8 @@
   ...
 }: {
   imports = [
+    inputs.noctalia.homeModules.default
+
     #config
     ./../../modules/home-manager/config/hyprland-config-1.nix
     ./../../modules/home-manager/config/vscodium-config-1.nix
