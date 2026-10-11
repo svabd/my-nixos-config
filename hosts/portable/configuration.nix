@@ -12,10 +12,26 @@
     ./../../modules/nixos/hyprland.nix
   ];
 
+  hardware.xpadneo.enable = true; 
+  
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
+    extraModprobeConfig = ''
+      options bluetooth disable_ertm=Y
+    '';
+  };
+
   # Enable Bluetooth hardware and turn it on by default
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+    settings.General = {
+      Experimental = true;      # Shows controller battery status
+      Privacy = "device";
+      JustWorksRepairing = "always";
+      Class = "0x000100";
+      FastConnectable = true;
+    };
   };
 
   # Required system services for Noctalia's bar integration
