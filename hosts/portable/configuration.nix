@@ -9,6 +9,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.default
+    inputs.noctalia.homeModules.default
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
   ];
@@ -135,6 +136,18 @@
     config = {
       common.default = ["gtk"];
       hyprland.default = ["hyprland" "gtk"];
+    };
+  };
+
+  programs.noctalia = {
+    enable = true;
+    
+    # Optional settings structure writing to ~/.config/noctalia/config.toml
+    settings = {
+      bar = {
+        position = "top";
+        transparent = true;
+      };
     };
   };
 

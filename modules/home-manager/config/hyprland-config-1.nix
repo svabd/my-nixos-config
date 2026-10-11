@@ -83,7 +83,7 @@ in {
       #      ------------------------------------------------------------------
 
       on = {
-        _args = ["hyprland.start" (lib.generators.mkLuaInline "function()\n  hl.exec_cmd(\"waybar\")\nend")];
+        _args = ["hyprland.start" (lib.generators.mkLuaInline "function()\n  hl.exec_cmd(\"noctalia\")\nend")];
       };
 
       #      ------------------------------------------------------------------
