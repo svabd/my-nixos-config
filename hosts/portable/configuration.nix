@@ -9,9 +9,10 @@
   ...
 }: {
   imports = [
-    ./../../modules/nixos/steam.nix
-    ./../../modules/nixos/hyprland.nix
+    ./../../modules/nixos/configuration.nix
   ];
+
+  mySystem.updateCommand = "sudo zsh /home/sv_abd/my-nixos-config/bash/portable.sh";
 
   hardware.xpadneo.enable = true;
 

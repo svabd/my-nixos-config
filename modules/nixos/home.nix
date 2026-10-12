@@ -7,14 +7,14 @@
     inputs.noctalia.homeModules.default
 
     #config
-    ./../../modules/home-manager/config/hyprland-config-1.nix
-    ./../../modules/home-manager/config/vscodium-config-1.nix
-    ./../../modules/home-manager/config/ytdl-sub-jellyfin-setup.nix
-    ./../../modules/home-manager/config/zsh-config.nix
-    ./../../modules/home-manager/config/update-portable.nix
+    ./../home-manager/config/hyprland-config-1.nix
+    ./../home-manager/config/vscodium-config-1.nix
+    ./../home-manager/config/ytdl-sub-jellyfin-setup.nix
+    ./../home-manager/config/zsh-config.nix
+    ./../home-manager/config/update-portable.nix
 
     #simple programs
-    ./../../modules/home-manager/programs/tree-sitter.nix
+    ./../home-manager/programs/tree-sitter.nix
   ];
   nixpkgs.config.allowUnfree = true;
 
