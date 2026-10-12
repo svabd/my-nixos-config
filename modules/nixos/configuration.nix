@@ -156,7 +156,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      update = "${config.mySystem.updateScript}";
+      update = config.mySystem.updateCommand;
     };
   };
 
