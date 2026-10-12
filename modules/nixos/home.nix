@@ -11,7 +11,6 @@
     ./../home-manager/config/vscodium-config-1.nix
     ./../home-manager/config/ytdl-sub-jellyfin-setup.nix
     ./../home-manager/config/zsh-config.nix
-    ./../home-manager/config/update-portable.nix
 
     #simple programs
     ./../home-manager/programs/tree-sitter.nix
