@@ -169,9 +169,11 @@
       collect = "sudo zsh /home/sv_abd/my-nixos-config/bash/nixos-garbage-collect.sh";
     };
 
+    histFile = "/home/sv_abd/.zsh_history";
+
+    histSize = 10000;
+
     history = {
-      size = 10000;
-      path = "/home/sv_abd/.zsh_history";
       ignoreAllDups = true;
     };
 
