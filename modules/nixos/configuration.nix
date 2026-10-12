@@ -171,7 +171,7 @@
 
     history = {
       size = 10000;
-      path = "${config.home.homeDirectory}/.zsh_history";
+      path = "/home/sv_abd/.zsh_history";
       ignoreAllDups = true;
     };
 
