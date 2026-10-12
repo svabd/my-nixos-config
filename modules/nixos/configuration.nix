@@ -173,10 +173,6 @@
 
     histSize = 10000;
 
-    history = {
-      ignoreAllDups = true;
-    };
-
     # Home Manager allows clean mapping of external Nix plugins
     plugins = [
       {
