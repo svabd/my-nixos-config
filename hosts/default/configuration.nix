@@ -12,6 +12,8 @@
     ./hardware-configuration.nix
   ];
 
+  mySystem.updateCommand = "sudo zsh /home/sv_abd/my-nixos-config/bash/system.sh";
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
