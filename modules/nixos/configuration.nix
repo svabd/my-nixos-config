@@ -114,6 +114,7 @@
     neovim
     tuigreet
     google-chrome
+    inputs.hytale-launcher.packages.${pkgs.system}.default
   ];
 
   environment.sessionVariables = {
