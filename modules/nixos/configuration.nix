@@ -156,7 +156,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = {
@@ -165,18 +165,34 @@
       la = "eza -lah --icons --git";
       tree = "eza --tree --icons";
       grep = "rg --color=auto";
-      update = "${config.mySystem.updateCommand}";
+      update = "${config.mySystem.updateScript}";
       collect = "sudo zsh /home/sv_abd/my-nixos-config/bash/nixos-garbage-collect.sh";
     };
 
-    histSize = 10000;
-
-    # Optional: Configure Oh My Zsh globally
-    ohMyZsh = {
-      enable = true;
-      plugins = ["git" "sudo"];
-      theme = "robbyrussell"; # Choose your theme
+    history = {
+      size = 10000;
+      path = "${config.home.homeDirectory}/.zsh_history";
+      ignoreAllDups = true;
     };
+
+    # Home Manager allows clean mapping of external Nix plugins
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.8.0";
+          sha256 = "sha256-Z6EYQdasvpl1P78poj9efnnLj7QQg13Me8x1Ryyw+dM=";
+        };
+      }
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
+    ];
   };
 
   services.openssh.enable = false;
