@@ -8,7 +8,7 @@
   imports = [
     inputs.home-manager.nixosModules.default
     inputs.nvf.nixosModules.default
-    ./../../modules/nixos/standard-tools.nix
+    ./standard-tools.nix
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
   ];
