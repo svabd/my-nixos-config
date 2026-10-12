@@ -50,6 +50,7 @@
         temurin-bin-25
       ];
     })
+    inputs.hytale-launcher.packages.${pkgs.system}.default
   ];
 
   programs.direnv = {

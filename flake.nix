@@ -12,6 +12,7 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hytale-launcher.url = "github:JPyke3/hytale-launcher-nix";
   };
   outputs = {
     self,
