@@ -156,7 +156,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestion.enable = true;
+    enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = {
