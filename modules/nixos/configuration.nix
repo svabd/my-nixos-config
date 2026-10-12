@@ -3,12 +3,11 @@
   lib,
   config,
   inputs,
-  nvf,
   ...
 }: {
   imports = [
     inputs.home-manager.nixosModules.default
-    nvf.nixosModules.default
+    inputs.nvf.nixosModules.default
     ./../../modules/nixos/standard-tools.nix
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
