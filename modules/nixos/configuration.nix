@@ -11,6 +11,7 @@
     ./standard-tools.nix
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/hyprland.nix
+    ./copyparty-setup.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
