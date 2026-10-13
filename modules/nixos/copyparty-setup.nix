@@ -13,7 +13,7 @@ in {
     inputs.copyparty.nixosModules.default
   ];
 
-  nixpkgs.overlays = [ copyparty.overlays.default ];
+  nixpkgs.overlays = [ inputs.copyparty.overlays.default ];
 
   services.copyparty = {
     enable = true;
