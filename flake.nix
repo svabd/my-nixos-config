@@ -13,6 +13,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hytale-launcher.url = "github:JPyke3/hytale-launcher-nix";
+
+    copyparty.url = "github:9001/copyparty";
+    copyparty.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = {
     self,

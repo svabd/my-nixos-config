@@ -1,4 +1,4 @@
-{lib, ...}: let
+{inputs, lib, ...}: let
 users = {
   "sv_abd" = {
     is-admin = true;
@@ -9,6 +9,12 @@ users = {
   };
 };
 in {
+  imports = [
+    inputs.copyparty.nixosModules.default
+  ];
+
+  nixpkgs.overlays = [ copyparty.overlays.default ];
+
   services.copyparty = {
     enable = true;
 
