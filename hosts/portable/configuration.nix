@@ -14,7 +14,7 @@
   ];
 
   mySystem.updateCommand = "sudo zsh /home/sv_abd/my-nixos-config/bash/portable.sh";
- 
+
   services.displayManager.sddm.enable = lib.mkForce false;
   services.displayManager.plasma-login-manager.enable = lib.mkForce false;
   services.desktopManager.plasma6.enable = lib.mkForce false;

@@ -127,8 +127,13 @@
   };
 
   hardware = {
-    #Opengl
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver # For modern Intel integrated graphics
+        intel-compute-runtime # Required for QSV acceleration
+      ];
+    };
 
     #Most wayland compositors need this
     nvidia = {
