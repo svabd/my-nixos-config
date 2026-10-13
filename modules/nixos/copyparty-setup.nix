@@ -26,7 +26,7 @@ in {
 
     accounts = let
     a = builtins.attrNames users;
-    b = builtins.map (h: {"${h}" = {passwordFile = "/run/keys/copyparty/${h}.txt";};}) a;
+    b = builtins.map (h: {"${h}" = {passwordFile = "/home/sv_abd/Documents/copyparty/${h}.txt";};}) a;
     c = lib.mergeAttrsList b;
     in c;
 
