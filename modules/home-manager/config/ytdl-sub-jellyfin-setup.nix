@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./../programs/ytdl-sub.nix
-    ./../programs/jellyfin.nix
   ];
 
   # 1. Install the package to your user profile

@@ -9,8 +9,9 @@
     inputs.home-manager.nixosModules.default
     inputs.nvf.nixosModules.default
     ./standard-tools.nix
-    ./../../modules/nixos/steam.nix
-    ./../../modules/nixos/hyprland.nix
+    ./steam.nix
+    ./hyprland.nix
+    ./copyparty-setup.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
