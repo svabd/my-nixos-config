@@ -131,6 +131,7 @@
   hardware = {
     graphics = {
       enable = true;
+      enable32Bit = true;
       extraPackages = with pkgs; [
         intel-media-driver # For modern Intel integrated graphics
         intel-compute-runtime # Required for QSV acceleration
