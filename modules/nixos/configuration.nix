@@ -115,6 +115,7 @@
     neovim
     tuigreet
     google-chrome
+    zulu25
   ];
 
   environment.sessionVariables = {
