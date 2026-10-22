@@ -48,6 +48,7 @@
         temurin-bin-17
         temurin-bin-21
         temurin-bin-25
+        zulu25
       ];
     })
     inputs.hytale-launcher.packages.${pkgs.system}.default
