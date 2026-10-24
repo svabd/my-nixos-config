@@ -22,6 +22,8 @@
 
   hardware.xpadneo.enable = true;
 
+  programs.xwayland.enable = true;
+
   boot = {
     extraModulePackages = with config.boot.kernelPackages; [xpadneo];
     extraModprobeConfig = ''
