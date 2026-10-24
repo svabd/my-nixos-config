@@ -118,6 +118,7 @@
     tuigreet
     google-chrome
     zulu25
+    zulu21
   ];
 
   environment.sessionVariables = {
