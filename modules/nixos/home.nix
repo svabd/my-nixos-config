@@ -50,6 +50,7 @@
         temurin-bin-25
         zulu25
       ];
+      additionalLibs = [libglvnd vulkan-loader];
     })
     inputs.hytale-launcher.packages.${pkgs.system}.default
   ];
