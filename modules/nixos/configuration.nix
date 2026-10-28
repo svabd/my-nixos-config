@@ -14,6 +14,10 @@
     ./copyparty-setup.nix
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "intellij-idea-oss-2025.3.4"
+  ];
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   home-manager.extraSpecialArgs = {inherit inputs;};
