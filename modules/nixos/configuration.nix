@@ -123,7 +123,6 @@
     google-chrome
     zulu25
     zulu21
-    jetbrains.idea-oss
   ];
 
   environment.sessionVariables = {
