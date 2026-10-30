@@ -11,6 +11,7 @@
         arrterian.nix-env-selector
         mkhl.direnv
         rust-lang.rust-analyzer
+        dart-code.dart-code
       ];
       userSettings = {
         "nix.enableLanguageServer" = true;
