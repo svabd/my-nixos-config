@@ -123,7 +123,9 @@
     google-chrome
     zulu25
     zulu21
-    inputs.horizon.packages.${pkgs.system}.horizon-electron
+    (inputs.horizon.packages.${pkgs.system}.horizon-electron.override {
+      additionalLibs = [google-chrome];
+    })
   ];
 
   environment.sessionVariables = {
