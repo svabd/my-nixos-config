@@ -16,6 +16,11 @@
 
     copyparty.url = "github:9001/copyparty";
     copyparty.inputs.nixpkgs.follows = "nixpkgs";
+
+    horizon = {
+      url = "github:Fchat-Horizon/Horizon?ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
