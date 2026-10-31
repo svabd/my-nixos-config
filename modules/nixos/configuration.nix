@@ -174,6 +174,8 @@
     };
   };
 
+  programs.hyprland.enable = true;
+
   services.openssh.enable = false;
 
   system.stateVersion = "25.11";
