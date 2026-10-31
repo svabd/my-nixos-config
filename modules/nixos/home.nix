@@ -50,7 +50,7 @@
         temurin-bin-25
         zulu25
       ];
-      additionalLibs = [libglvnd vulkan-loader];
+      additionalLibs = [libglvnd vulkan-loader wayland libdecor libglvnd];
     })
     inputs.hytale-launcher.packages.${pkgs.system}.default
   ];
