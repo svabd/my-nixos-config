@@ -12,6 +12,7 @@
         mkhl.direnv
         rust-lang.rust-analyzer
         dart-code.dart-code
+        ms-python.python
       ];
       userSettings = {
         "nix.enableLanguageServer" = true;
