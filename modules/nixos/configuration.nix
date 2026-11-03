@@ -124,6 +124,7 @@
     zulu25
     zulu21
     inputs.horizon.packages.${pkgs.system}.horizon-electron
+    python
   ];
 
   environment.sessionVariables = {
