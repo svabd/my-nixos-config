@@ -125,6 +125,7 @@
     zulu21
     inputs.horizon.packages.${pkgs.system}.horizon-electron
     python3
+    godot
   ];
 
   environment.sessionVariables = {
