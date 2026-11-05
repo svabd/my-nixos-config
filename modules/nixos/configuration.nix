@@ -128,6 +128,7 @@
     python3
     godot
     modrinth-app
+    librewolf
   ];
 
   environment.sessionVariables = {
