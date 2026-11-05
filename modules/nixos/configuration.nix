@@ -127,6 +127,7 @@
     inputs.horizon.packages.${pkgs.system}.horizon-electron
     python3
     godot
+    modrinth-app
   ];
 
   environment.sessionVariables = {
