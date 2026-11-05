@@ -12,6 +12,7 @@
     ./steam.nix
     ./hyprland.nix
     ./copyparty-setup.nix
+    ./steam-headless.nix
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
