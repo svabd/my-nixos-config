@@ -12,13 +12,13 @@
       DISPLAY = ":1";
       UNAME = "steamuser";
       # If using NVIDIA, uncomment below:
-      # NVIDIA_VISIBLE_DEVICES = "all";
-      # NVIDIA_DRIVER_CAPABILITIES = "all";
+      NVIDIA_VISIBLE_DEVICES = "all";
+      NVIDIA_DRIVER_CAPABILITIES = "all";
     };
 
     extraOptions = [
       "--device=/dev/dri:/dev/dri" # Intel/AMD GPU path
-      # "--gpus=all"              # Uncomment if using NVIDIA GPU
+      "--gpus=all"              # Uncomment if using NVIDIA GPU
       "--ipc=host"
       "--cap-add=SYS_ADMIN"
     ];
