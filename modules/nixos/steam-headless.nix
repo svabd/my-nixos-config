@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # --- Container runtime -----------------------------------------------------
   # oci-containers defaults to podman, which doesn't understand `--gpus`.
   # You enable docker below, so tell oci-containers to actually use it.
@@ -29,8 +27,8 @@
 
   # The container uses host networking (needed for controller/input), so port
   # mappings are ignored. Open the ports in the firewall instead.
-  networking.firewall.allowedTCPPorts = [ 8083 47984 47989 47990 48010 ];
-  networking.firewall.allowedUDPPorts = [ 47998 47999 48000 48002 48010 ];
+  networking.firewall.allowedTCPPorts = [8083 47984 47989 47990 48010];
+  networking.firewall.allowedUDPPorts = [47998 47999 48000 48002 48010];
 
   virtualisation.oci-containers.containers."steam-headless" = {
     # Upstream image lives on Docker Hub under josh5/, not ghcr.io/steam-headless/.
@@ -46,15 +44,15 @@
       UMASK = "000";
       USER_PASSWORD = config.system.steam-headless-pass; # CHANGE ME: login for the web UI / container user
 
-      MODE = "primary";            # container runs its own X server
-      WEB_UI_MODE = "vnc";         # noVNC on port 8083
+      MODE = "primary"; # container runs its own X server
+      WEB_UI_MODE = "vnc"; # noVNC on port 8083
       PORT_NOVNC_WEB = "8083";
       ENABLE_VNC_AUDIO = "true";
 
       ENABLE_STEAM = "true";
       ENABLE_SUNSHINE = "true";
       SUNSHINE_USER = "sunshine";
-      SUNSHINE_PASS = config.system.steam-headless-pass;  # CHANGE ME
+      SUNSHINE_PASS = config.system.steam-headless-pass; # CHANGE ME
 
       ENABLE_EVDEV_INPUTS = "true";
       FORCE_X11_DUMMY_CONFIG = "true"; # no monitor attached -> use dummy display
