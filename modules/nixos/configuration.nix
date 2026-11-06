@@ -123,7 +123,6 @@
     google-chrome
     zulu25
     zulu21
-    inputs.horizon.packages.${pkgs.system}.horizon-electron
     python3
     godot
     modrinth-app

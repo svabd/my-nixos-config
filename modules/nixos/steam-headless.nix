@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   # --- Container runtime -----------------------------------------------------
   # oci-containers defaults to podman, which doesn't understand `--gpus`.
   # You enable docker below, so tell oci-containers to actually use it.
@@ -42,7 +46,7 @@
       PUID = "1000";
       PGID = "1000";
       UMASK = "000";
-      USER_PASSWORD = config.system.steam-headless-pass; # CHANGE ME: login for the web UI / container user
+      USER_PASSWORD = config.mySystem.steam-headless-pass; # CHANGE ME: login for the web UI / container user
 
       MODE = "primary"; # container runs its own X server
       WEB_UI_MODE = "vnc"; # noVNC on port 8083
@@ -52,7 +56,7 @@
       ENABLE_STEAM = "true";
       ENABLE_SUNSHINE = "true";
       SUNSHINE_USER = "sunshine";
-      SUNSHINE_PASS = config.system.steam-headless-pass; # CHANGE ME
+      SUNSHINE_PASS = config.mySystem.steam-headless-pass; # CHANGE ME
 
       ENABLE_EVDEV_INPUTS = "true";
       FORCE_X11_DUMMY_CONFIG = "true"; # no monitor attached -> use dummy display
