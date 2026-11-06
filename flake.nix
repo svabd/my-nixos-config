@@ -21,6 +21,10 @@
       url = "github:Fchat-Horizon/Horizon?ref=main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    secrets = {
+      url = "path:/home/svabd/nix-secrets"; # directory containing secrets.nix
+      flake = false;
+    };
   };
   outputs = {
     self,

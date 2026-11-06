@@ -11,7 +11,7 @@
     ./standard-tools.nix
     ./steam.nix
     ./hyprland.nix
-    ./secrets.nix
+    "${inputs.secrets}/secrets.nix"
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
