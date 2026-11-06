@@ -11,6 +11,7 @@
   imports = [
     ./../../modules/nixos/configuration.nix
     ./../../modules/nixos/copyparty-setup.nix
+    ./../../modules/nixos/steam-headless.nix
   ];
 
   mySystem.updateCommand = "sudo zsh /home/sv_abd/my-nixos-config/bash/portable.sh";
