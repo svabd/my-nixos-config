@@ -21,6 +21,7 @@
       url = "path:/home/sv_abd/nix-secrets"; # directory containing secrets.nix
       flake = false;
     };
+    sops-nix.url = "github:Mic92/sops-nix";
   };
   outputs = {
     self,

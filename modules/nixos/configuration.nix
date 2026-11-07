@@ -11,7 +11,7 @@
     ./standard-tools.nix
     ./steam.nix
     ./hyprland.nix
-    "${inputs.secrets}/secrets.nix"
+    inputs.sops-nix.nixosModules.sops
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -19,6 +19,11 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  sops.age.keyFile = "/home/sv_abd/.config/sops/age/keys.txt";
+
+  sops.defaultSopsFile = ./../../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
 
   home-manager.extraSpecialArgs = {inherit inputs;};
   home-manager.users.sv_abd = import ./home.nix;
